@@ -88,3 +88,11 @@ fb2_fns = MAP(RANGE(ONE)(HUNDRED))((n) ->
   IF(IS_ZERO(MOD(n)(FIFTEEN)))(FIZZBUZZ)(IF(IS_ZERO(MOD(n)(THREE)))(FIZZ)(IF(IS_ZERO(MOD(n)(FIVE)))(BUZZ)(TO_DIGITS(n)))))
 
 fb2 = to_array(fb2_fns).map (n) -> to_string(n)
+
+## TEST ##
+array_equal = (a, b) ->
+  return false unless a[i] == b[i] for i in a
+  true
+
+console.log(fb2.join(', '))
+console.log("Equal?", array_equal(fb1, fb2))
