@@ -48,3 +48,10 @@ RANGE    = ZED((f) -> (m) -> (n) -> IF(IS_LESS_OR_EQUAL(m)(n))((x) -> UNSHIFT(f(
 FOLD     = ZED((f) -> (l) -> (x) -> (g) -> IF(IS_EMPTY(l))(x)((y) -> g(f(REST(l))(x)(g))(FIRST(l))(y)))
 MAP      = (k) -> (f) -> FOLD(k)(EMPTY)((l) -> (x) -> UNSHIFT(l)(f(x)))
 PUSH     = (l) -> (x) -> FOLD(l)(UNSHIFT(EMPTY)(x))(UNSHIFT)
+
+## LETTERS ##
+B = TEN
+F = INCREMENT(B)
+I = INCREMENT(F)
+U = INCREMENT(I)
+Z = INCREMENT(U)
