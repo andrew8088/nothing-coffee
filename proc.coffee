@@ -19,3 +19,18 @@ POWER            = (m) -> (n) -> n(MULTIPLY(m))(ONE)
 IS_ZERO          = (n) -> n((x) -> FALSE)(TRUE)
 IS_LESS_OR_EQUAL = (m) -> (n) -> IS_ZERO(SUBTRACT(m)(n))
 MOD              = ZED((f) -> (m) -> (n) -> IF(IS_LESS_OR_EQUAL(n)(m))((x) -> f(SUBTRACT(m)(n))(n)(x))(m))
+
+## NUMBERS ##
+ZERO    = (p) -> (x) -> x
+ONE     = (p) -> (x) -> p(x)
+TWO     = INCREMENT(ONE)
+THREE   = INCREMENT(TWO)
+FOUR    = MULTIPLY(TWO)(TWO)
+FIVE    = INCREMENT(FOUR)
+SIX     = MULTIPLY(TWO)(THREE)
+SEVEN   = INCREMENT(SIX)
+EIGHT   = POWER(TWO)(TWO)
+NINE    = POWER(THREE)(TWO)
+TEN     = MULTIPLY(TWO)(FIVE)
+FIFTEEN = MULTIPLY(THREE)(FIVE)
+HUNDRED = POWER(TEN)(TWO)
