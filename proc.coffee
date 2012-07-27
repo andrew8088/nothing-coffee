@@ -63,3 +63,15 @@ FIZZBUZZ = UNSHIFT(UNSHIFT(UNSHIFT(UNSHIFT(BUZZ)(Z))(Z))(I))(F)
 
 ## CONVERTERS ##
 TO_DIGITS = ZED((f) -> (n) -> PUSH(IF(IS_LESS_OR_EQUAL(n)(DECREMENT(TEN)))(EMPTY)((x) -> f(DIV(n)(TEN))(x)))(MOD(n)(TEN)))
+
+## COFFEESCRIPT CONVERTERS ##
+to_integer = (n) -> n((x) -> x+1)(0)
+to_boolean = (p) -> IF(p)(true)(false)
+to_char    = (c) -> '0123456789BFiuz'[to_integer(c)]
+to_string  = (s) -> to_array(s).map((c) -> to_char c).join ''
+to_array   = (p) -> 
+  array = []
+  until to_boolean(IS_EMPTY(p))
+    array.push(FIRST(p))
+    p = REST(p)
+  array
