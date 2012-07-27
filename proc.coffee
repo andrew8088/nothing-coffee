@@ -75,3 +75,10 @@ to_array   = (p) ->
     array.push(FIRST(p))
     p = REST(p)
   array
+
+## COFFEESCRIPT IMPLEMENTATION OF FIZZBUZZ ##
+fb1 = [1..100].map (n) ->
+  return 'FizzBuzz' if n % 15 == 0
+  return 'Fizz'     if n %  3 == 0
+  return 'Buzz'     if n %  5 == 0
+  return "#{n}"
