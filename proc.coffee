@@ -82,3 +82,9 @@ fb1 = [1..100].map (n) ->
   return 'Fizz'     if n %  3 == 0
   return 'Buzz'     if n %  5 == 0
   return "#{n}"
+
+## PROC IMPLEMENTATION OF FIZZBUZZ ##
+fb2_fns = MAP(RANGE(ONE)(HUNDRED))((n) -> 
+  IF(IS_ZERO(MOD(n)(FIFTEEN)))(FIZZBUZZ)(IF(IS_ZERO(MOD(n)(THREE)))(FIZZ)(IF(IS_ZERO(MOD(n)(FIVE)))(BUZZ)(TO_DIGITS(n)))))
+
+fb2 = to_array(fb2_fns).map (n) -> to_string(n)
